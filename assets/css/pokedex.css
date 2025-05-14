@@ -145,3 +145,96 @@
     color: white;
   }
 }
+
+.infoContentPokemon{
+  display: flex;
+  width: 35%;
+  height: 70%;
+  background-color: #678fee;
+  z-index: 1;
+  position: absolute;
+  top: 10%;
+  right: 35%;
+  border-radius: 3rem;
+  justify-content: space-evenly;
+}
+
+
+.infoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.infoHead {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  height: fit-content;
+  position: relative; 
+  width: 50%; 
+}
+
+.infoHead .InfoNumber{
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 1.2em;
+  color: #fff;
+  opacity: .7;
+}
+
+.InfoNames{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  height: auto;
+  margin: 2rem 2rem 1rem 2rem;
+}
+
+.infoHead .InfoNames h3 {
+  text-transform: capitalize;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8em;
+  text-align: start;
+}
+
+.infoHead .InfoNames .type {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: .60rem 1.1rem;
+  background-color: #6c79db;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1em;
+}
+
+.infoImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 14rem;
+  margin: 2rem 0 0 0;
+}
+
+.infoImage img{
+  z-index: 2;
+}
+
+.infoMainPokemon{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: #a7a7a7;
+  height: 65%;
+  width: 100%;
+  bottom: 0;
+  border-radius: 3rem;
+}

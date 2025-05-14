@@ -32,12 +32,3 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
     .then((pokemonsDetails) => pokemonsDetails)
     .catch((error) => console.error(error))
 }
-
-Promise.all([   
-  fetch('https://pokeapi.co/api/v2/pokemon'),
-  fetch('https://pokeapi.co/api/v2/pokemon'),
-  fetch('https://pokeapi.co/api/v2/pokemon'),
-  fetch('https://pokeapi.co/api/v2/pokemon')
-]).then((results) => {
-  console.log(results)
-})
