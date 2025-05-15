@@ -5,75 +5,75 @@
 }
 
 .normal {
-  background-color: #a6a877;
+  background-color: #a6a877aa;
 }
 
 .grass {
-  background-color: #77c850;
+  background-color: #76c850aa;
 }
 
 .fire {
-  background-color: #ee7f30;
+  background-color: #ee7f30aa;
 }
 
 .water {
-  background-color: #678fee;
+  background-color: #678feeaa;
 }
 
 .electric {
-  background-color: #f7cf2e;
+  background-color: #f7cf2eaa;
 }
 
 .ice {
-  background-color: #98d5d7;
+  background-color: #98d5d7aa;
 }
 
 .ground {
-  background-color: #dfbf69;
+  background-color: #dfbf69aa;
 }
 
 .flying {
-  background-color: #a98ff0;
+  background-color: #a98ff0aa;
 }
 
 .poison {
-  background-color: #a040a0;
+  background-color: #a040a0aa;
 }
 
 .fighting {
-  background-color: #bf3029;
+  background-color: #bf3029aa;
 }
 
 .psychic {
-  background-color: #f65687;
+  background-color: #f65687aa;
 }
 
 .dark {
-  background-color: #725847;
+  background-color: #725847aa;
 }
 
 .rock {
-  background-color: #b8a137;
+  background-color: #b8a137aa;
 }
 
 .bug {
-  background-color: #a8b720;
+  background-color: #a8b720aa;
 }
 
 .ghost {
-  background-color: #6e5896;
+  background-color: #6e5896aa;
 }
 
 .steel {
-  background-color: #b9b7cf;
+  background-color: #b9b7cfaa;
 }
 
 .dragon {
-  background-color: #6f38f6;
+  background-color: #6f38f6aa;
 }
 
 .fairy {
-  background-color: #f9aec7;
+  background-color: #f9aec7aa;
 }
 
 
@@ -87,8 +87,8 @@
 }
 
 .pokemon .number{
-  color: #000;
-  opacity: .3;
+  color: #ffffff;
+  opacity: .5;
   text-align: right;
 }
 
@@ -232,9 +232,32 @@
   display: flex;
   position: absolute;
   flex-direction: column;
-  background-color: #a7a7a7;
+  background-color: #efefef;
   height: 65%;
   width: 100%;
   bottom: 0;
   border-radius: 3rem;
+  border: 1px solid rgba(186, 186, 186, 0.9);
+  box-shadow: inset 0 1px 20px rgba(213, 213, 213, 0.702);
+}
+
+.infoMainPokemon .infoList{
+  display: flex;
+  flex-direction: initial;
+  align-items: flex-start;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+}
+
+.infoMainPokemon .infoList ol li{
+  list-style: none;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: .5rem;
+  text-decoration-color: #678fee;
+  text-decoration-thickness: 3px;
+  text-transform: capitalize;
 }
