@@ -5,24 +5,30 @@
   margin: 0;
 }
 
+html{
+  overflow: hidden;
+  height: 100dvh;
+  width: 100dvw;
+}
+
 body{
   background: radial-gradient(circle,rgba(0, 0, 0, 1) 15%, rgb(10, 10, 10) 70%, rgb(20, 20, 20) 100%);
   background-repeat: repeat;
   background-size: cover;
   width: 100dvw;
   height: 100dvh;
+  overflow-y: auto;
 }
 
 .content{
-  width: 100dvw;
-  height: 100dvh;
-  padding: 1rem;
-  background-color: rgba(174, 174, 174, 0.253);
-  box-shadow: inset 1px 1px 20px rgba(161, 161, 161, 0.20);
+  border-radius: 1rem;
 
   h1{
     color: #fff;
+    padding-left: 1rem;
   }
 }
+
+
 
 
