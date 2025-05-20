@@ -1,3 +1,4 @@
+ AOS.init();
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 const maxRecords = 151;
@@ -8,7 +9,7 @@ let offset = 0;
 function loadPokemonItens(offset, limit){
   pokeApi.getPokemons(offset, limit).then((pokemons = []) => { 
     const newHtml = pokemons.map((pokemon) => 
-      `<li class="pokemon ${pokemon.type}">
+      `<li class="pokemon" id="${pokemon.type}" onclick="showDetails(${pokemon.number})">
           <span class="number">#${pokemon.number}</span>
           <span class="name">${pokemon.name}</span>
 
@@ -24,6 +25,62 @@ function loadPokemonItens(offset, limit){
     pokemonList.innerHTML += newHtml 
   })
 }
+
+function showDetails(pokemonNumber) {
+  pokeApi.getPokemonById(pokemonNumber).then((pokemon) => {
+    const modalContainer = document.createElement('div');
+    modalContainer.classList.add('infoContent', 'active');
+    
+    const htmlDetails = `
+      <div class="infoContentPokemon">
+      <div class="infoHead">
+        <span class="InfoNumber">#${pokemon.number}</span>
+        <div class="InfoNames">
+          <h3>${pokemon.name}</h3>
+          ${pokemon.types.map((type) => `<span class="type ${type}">${type}</span>`)}
+        </div>
+        <div class="infoImage">
+          <div class="imageFilter ${pokemon.type}">
+            <img src="${pokemon.photo}" alt="imagem">
+          </div>
+        </div>
+      </div>
+      <div class="infoMainPokemon">
+        <div class="infoList">
+          <ol>
+            <li>about</li>
+          </ol>
+        </div>
+        <div class="infoAbout-content">
+          <ol class="infoAbout">
+            <li> <img src="./assets/icons/ruler.svg" alt="ruler">height: <span>${pokemon.height}m</span></li>
+            <li> <img src="./assets/icons/weight.svg" alt="weight"> weight: <span>${pokemon.weight}kg</span></li>
+            <li class="stat-item">
+              <span class="stat-name">HP</span>
+              <span class="stat-value">${pokemon.stats.hp}</span>
+              <div class="progress-bar">
+                <input class="progress" type="range" name="hp" id="hp" min="0" max="100" value="${pokemon.stats.hp}" step="1" disabled>
+              </div>
+            </li>
+            <li class="stat-item">
+              <span class="stat-name">attack</span>
+              <span class="stat-value">${pokemon.stats.attack}</span>
+              <div class="progress-bar">
+                <input class="progress" type="range" name="attack" id="attack" min="0" max="100" value="${pokemon.stats.attack}" step="1" disabled>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    `;
+    
+    modalContainer.innerHTML = htmlDetails;
+    document.body.appendChild(modalContainer);
+  
+  });
+}
+
 
 loadPokemonItens(offset, limit)
 

@@ -8,63 +8,67 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/global.css">
   <link rel="stylesheet" href="./assets/css/pokedex.css">
   <link rel="stylesheet" href="./assets/css/responsive.css">
   <title>Pokedex</title>
 </head>
 <body>
-  <section class="content">
+  <section class="content" data-aos="fade-down">
     <h1>Pokedex</h1>
-    <ol id="pokemonList" class="pokemons">
+    <ol id="pokemonList" class="pokemons" data-aos="zoom-in">
     </ol>
 
     <div class="pagination">
       <button id="loadMoreButton" type="button">
         Load More
-      </button>
+      </button> 
     </div>
   </section>
 
-  <section class="infoContentPokemon">
-    <div class="infoHead">
-      <span class="InfoNumber">#4</span>
-      <div class="InfoNames">
-        <h3>charmander</h3>
-        <span class="type InfoFire">type</span>
+  <section class="infoContent">
+    <!-- <div class="infoContentPokemon">
+      <div class="infoHead">
+        <span class="InfoNumber">#4</span>
+        <div class="InfoNames">
+          <h3>charmander</h3>
+          <span class="type InfoFire">type</span>
+        </div>
+        <div class="infoImage InfoFire">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg" alt="imagem">
+        </div>
       </div>
-      <div class="infoImage InfoFire">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg" alt="imagem">
+      <div class="infoMainPokemon">
+        <div class="infoList">
+          <ol>
+            <li>about</li>
+          </ol>
+        </div>
+        <div class="infoAbout-content">
+          <ol class="infoAbout">
+            <li> <img src="./assets/icons/ruler.svg" alt="ruler">height: <span>0.6m</span></li>
+            <li> <img src="./assets/icons/weight.svg" alt="weight"> weight: <span>8.5kg</span></li>
+            <li class="stat-item">
+              <span class="stat-name">HP</span>
+              <span class="stat-value">50</span>
+              <div class="progress-bar">
+                <input class="progress" type="range" name="hp" id="hp" min="0" max="100" value="50" step="1" disabled>
+              </div>
+            </li>
+            <li class="stat-item">
+              <span class="stat-name">attack</span>
+              <span class="stat-value">62</span>
+              <div class="progress-bar">
+                <input class="progress" type="range" name="attack" id="attack" min="0" max="100" value="62" step="1" disabled>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
-    </div>
-    <section class="infoMainPokemon">
-      <div class="infoList">
-        <ol>
-          <li>about</li>
-        </ol>
-      </div>
-      <div class="infoAbout-content">
-        <ol class="infoAbout">
-          <li> <img src="./assets/icons/ruler.svg" alt="ruler">height: <span>0.6m</span></li>
-          <li> <img src="./assets/icons/weight.svg" alt="weight"> weight: <span>8.5kg</span></li>
-          <li class="stat-item">
-            <span class="stat-name">HP</span>
-            <span class="stat-value">50</span>
-            <div class="progress-bar">
-              <input class="progress" type="range" name="hp" id="hp" min="0" max="100" value="50" step="1" disabled>
-            </div>
-          </li>
-          <li class="stat-item">
-            <span class="stat-name">attack</span>
-            <span class="stat-value">62</span>
-            <div class="progress-bar">
-              <input class="progress" type="range" name="attack" id="attack" min="0" max="100" value="62" step="1" disabled>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+    </div> -->
   </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="/assets/js/pokemon-model.js"></script>
   <script src="/assets/js/poke-api.js"></script>
   <script src="/assets/js/main.js"></script>
