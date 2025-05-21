@@ -118,7 +118,7 @@
   button{
     font-size: .825rem;
     margin: .23rem 0;
-    padding: .50rem .60rem;
+    padding: .6rem .6rem;
     background-color: #6c79db36;
     border: .5px solid #ffffff2d;
     border-radius: 1rem;
@@ -150,6 +150,7 @@
 .infoContent.active{
   display: flex;
 }
+
 
 .infoContentPokemon{
   width: 100%;
@@ -385,4 +386,34 @@ input[type="range"]#attack::-moz-range-progress {
   background: var(--attack-color);
   height: 2rem;
   border-radius: 4px;
+}
+
+.infoButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 10%;
+  margin: 0 auto 1rem auto;
+  
+}
+
+.infoButton button{
+  color: #bbbbbb;
+  cursor: pointer;
+  background: transparent;
+  padding: .7rem 1rem;
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: .5px solid #ffffff2d;
+  border-radius: 1rem;
+}
+
+.infoButton button:hover{
+  background-color: #6c79dba1;
+  transition: all .3s ease;
+  border: .5px solid #e6e6e6;
+  color: #fff;
 }

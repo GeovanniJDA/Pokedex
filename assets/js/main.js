@@ -1,6 +1,5 @@
- AOS.init();
-const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
+const pokemonList = document.getElementById('pokemonList')
 const maxRecords = 151;
 const limit = 10;
 let offset = 0;
@@ -9,7 +8,7 @@ let offset = 0;
 function loadPokemonItens(offset, limit){
   pokeApi.getPokemons(offset, limit).then((pokemons = []) => { 
     const newHtml = pokemons.map((pokemon) => 
-      `<li class="pokemon" id="${pokemon.type}" onclick="showDetails(${pokemon.number})">
+      `<li class="pokemon" data-aos="zoom-in-up" id="${pokemon.type}" onclick="showDetails(${pokemon.number})">
           <span class="number">#${pokemon.number}</span>
           <span class="name">${pokemon.name}</span>
 
@@ -30,6 +29,7 @@ function showDetails(pokemonNumber) {
   pokeApi.getPokemonById(pokemonNumber).then((pokemon) => {
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('infoContent', 'active');
+    modalContainer.setAttribute('data-aos', 'zoom-in-up');
     
     const htmlDetails = `
       <div class="infoContentPokemon">
@@ -71,6 +71,11 @@ function showDetails(pokemonNumber) {
             </li>
           </ol>
         </div>
+        <div class="infoButton">
+            <button id="close" type="button">
+              Close
+            </button>
+          </div>
       </div>
     </div>
     `;
@@ -78,6 +83,14 @@ function showDetails(pokemonNumber) {
     modalContainer.innerHTML = htmlDetails;
     document.body.appendChild(modalContainer);
   
+    const closeButton = modalContainer.querySelector('#close');
+    closeButton.addEventListener('click', () => {
+       const modalContainer = document.querySelector('.infoContent');
+       if (modalContainer) {
+          modalContainer.classList.remove('active');
+          document.body.removeChild(modalContainer);
+       }
+     });
   });
 }
 
@@ -98,6 +111,8 @@ loadMoreButton.addEventListener('click', () =>{
   }
 })
 
+
+AOS.init();
 
 
 
