@@ -133,6 +133,9 @@
   }
 }
 
+.infoContent.active{
+  display: flex;
+}
 
 .infoContent{
   display: none;
@@ -147,9 +150,6 @@
   box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.09); 
 }
 
-.infoContent.active{
-  display: flex;
-}
 
 
 .infoContentPokemon{
@@ -168,7 +168,7 @@
   width: 100%; 
 }
 
-.infoHead .InfoNumber{
+.infoHead .infoNumber{
   position: absolute;
   top: 1rem;
   right: 2rem;
@@ -177,7 +177,7 @@
   opacity: .7;
 }
 
-.InfoNames{
+.infoNames{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,7 +186,7 @@
   margin: 2rem 2rem 1rem 2rem;
 }
 
-.infoHead .InfoNames h3 {
+.infoHead .infoNames h3 {
   text-transform: capitalize;
   color: #fff;
   margin-bottom: 1.5rem;
@@ -194,7 +194,7 @@
   text-align: start;
 }
 
-.infoHead .InfoNames .type {
+.infoHead .infoNames .type {
   display: inline-block;
   margin-top: 0.5rem;
   padding: .60rem 1.1rem;
@@ -279,7 +279,7 @@
   justify-content: space-evenly;
   align-items: center;
   font-weight: bold;
-  padding: 0.1rem .5rem;
+  padding: 0.5rem .5rem;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
 }

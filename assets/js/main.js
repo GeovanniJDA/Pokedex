@@ -8,7 +8,7 @@ let offset = 0;
 function loadPokemonItens(offset, limit){
   pokeApi.getPokemons(offset, limit).then((pokemons = []) => { 
     const newHtml = pokemons.map((pokemon) => 
-      `<li class="pokemon" data-aos="zoom-in-up" id="${pokemon.type}" onclick="showDetails(${pokemon.number})">
+      `<li class="pokemon" id="${pokemon.type}" onclick="showDetails(${pokemon.number})">
           <span class="number">#${pokemon.number}</span>
           <span class="name">${pokemon.name}</span>
 
@@ -27,17 +27,22 @@ function loadPokemonItens(offset, limit){
 
 function showDetails(pokemonNumber) {
   pokeApi.getPokemonById(pokemonNumber).then((pokemon) => {
+    const mainContent = document.querySelector('.content');
+    mainContent.classList.add('blur-background');
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('infoContent', 'active');
     modalContainer.setAttribute('data-aos', 'zoom-in-up');
+    modalContainer.setAttribute('data-aos-duration', '200')
     
     const htmlDetails = `
       <div class="infoContentPokemon">
       <div class="infoHead">
-        <span class="InfoNumber">#${pokemon.number}</span>
-        <div class="InfoNames">
+        <span class="infoNumber">#${pokemon.number}</span>
+        <div class="infoNames">
           <h3>${pokemon.name}</h3>
-          ${pokemon.types.map((type) => `<span class="type ${type}">${type}</span>`)}
+          <div class="infoType">
+            ${pokemon.types.map((type) => `<span class="type ${type}">${type}</span>`).join(' ')}
+          </div>
         </div>
         <div class="infoImage">
           <div class="imageFilter ${pokemon.type}">
@@ -89,6 +94,7 @@ function showDetails(pokemonNumber) {
        if (modalContainer) {
           modalContainer.classList.remove('active');
           document.body.removeChild(modalContainer);
+          mainContent.classList.remove('blur-background');
        }
      });
   });
@@ -113,10 +119,3 @@ loadMoreButton.addEventListener('click', () =>{
 
 
 AOS.init();
-
-
-
-
-
-
-
