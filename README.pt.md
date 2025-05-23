@@ -1,5 +1,7 @@
 # Pokedex
 
+> 📖 [Read this page in English](./README.en.md)
+
 Uma Pokédex desenvolvida como projeto pessoal, utilizando HTML, CSS e JavaScript. Este projeto tem como objetivo apresentar informações sobre os Pokémon de forma interativa e visualmente atraente, simulando a experiência de uma Pokédex clássica do universo Pokémon.
 
 ## Funcionalidades
