@@ -32,7 +32,7 @@ function showDetails(pokemonNumber) {
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('infoContent', 'active');
     modalContainer.setAttribute('data-aos', 'zoom-in-up');
-    modalContainer.setAttribute('data-aos-duration', '200')
+    modalContainer.setAttribute('data-aos-duration', '250')
     
     const htmlDetails = `
       <div class="infoContentPokemon">
@@ -58,8 +58,8 @@ function showDetails(pokemonNumber) {
         </div>
         <div class="infoAbout-content">
           <ol class="infoAbout">
-            <li> <img src="./assets/icons/ruler.svg" alt="ruler">height: <span>${pokemon.height}m</span></li>
-            <li> <img src="./assets/icons/weight.svg" alt="weight"> weight: <span>${pokemon.weight}kg</span></li>
+            <li> <img src="./assets/icons/ruler.svg" alt="ruler">height: <span>${(pokemon.height/10).toFixed(1)}m (${((pokemon.height/10)*3.28084).toFixed(1)}ft)</span></li>
+            <li> <img src="./assets/icons/weight.svg" alt="weight"> weight: <span>${(pokemon.weight/10).toFixed(1)}kg (${((pokemon.weight/10)*2.20462).toFixed(1)}lbs)</span></li>
             <li class="stat-item">
               <span class="stat-name">HP</span>
               <span class="stat-value">${pokemon.stats.hp}</span>
