@@ -1,6 +1,6 @@
 # Pokedex
 
-> 📖 [Leia esta página em Português](./README.pt.md)
+> 📖 [Leia esta página em Português](./README.md)
 
 A Pokédex project developed as a personal initiative, using HTML, CSS, and JavaScript. This project aims to display information about Pokémon in an interactive and visually appealing way, simulating the experience of a classic Pokédex from the Pokémon universe.
 
